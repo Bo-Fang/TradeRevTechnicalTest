@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA["Total Available jobs for scenario 3 is: " + locationlabels.size()]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2021-02-19T19:45:27 EST" name="Default suite" finished-at="2021-02-19T19:45:38 EST" duration-ms="10814">
+    <groups>
+    </groups>
+    <test started-at="2021-02-19T19:45:27 EST" name="Default test" finished-at="2021-02-19T19:45:38 EST" duration-ms="10814">
+      <class name="TradeRevTest">
+        <test-method is-config="true" signature="setupWebDriver()[pri:0, instance:TradeRevTest@1fa268de]" started-at="2021-02-19T19:45:27 EST" name="setupWebDriver" finished-at="2021-02-19T19:45:28 EST" duration-ms="1678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupWebDriver -->
+        <test-method signature="Scenario1()[pri:1, instance:TradeRevTest@1fa268de]" started-at="2021-02-19T19:45:28 EST" name="Scenario1" finished-at="2021-02-19T19:45:34 EST" duration-ms="5594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario1 -->
+        <test-method signature="Scenario2()[pri:2, instance:TradeRevTest@1fa268de]" started-at="2021-02-19T19:45:34 EST" name="Scenario2" finished-at="2021-02-19T19:45:35 EST" duration-ms="1341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario2 -->
+        <test-method signature="Scenario3()[pri:3, instance:TradeRevTest@1fa268de]" started-at="2021-02-19T19:45:35 EST" name="Scenario3" finished-at="2021-02-19T19:45:37 EST" duration-ms="1441" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA["Total Available jobs for scenario 3 is: " + locationlabels.size()]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Scenario3 -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:TradeRevTest@1fa268de]" started-at="2021-02-19T19:45:37 EST" name="cleanup" finished-at="2021-02-19T19:45:38 EST" duration-ms="724" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
+      </class> <!-- TradeRevTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
