@@ -18,6 +18,9 @@ HOW TO SEE TEST RESULTS:
 
 Possible Issues:
 1. Error: Could not find or load main class org.testng.TestNG 
+
 Solution: Make sure the first line in the RunTest.bat has the correct path to the tradRevTest folder
+
 2. Exception in thread "main" java.lang.UnsupportedClassVersionError: TradeRevTest has been compiled by a more recent version of the Java Runtime (class file version 59.0)
+
 Solution: See link above to install latest Java sdk
