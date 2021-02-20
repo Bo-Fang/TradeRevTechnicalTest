@@ -13,52 +13,51 @@ import org.testng.Assert;
 
 /* Scenario 1: check whether Canada TradeRev career page is displayed properly             
 1.     Visit https://www.traderev.com/en-ca/
-2.     Navigate to ìCareersî page
+2.     Navigate to ‚ÄúCareers‚Äù page
 3.     The Careers page should be displayed properly
-4.     Click on ìCanadian Opportunitiesî
+4.     Click on ‚ÄúCanadian Opportunities‚Äù
 5.     Validate whether Canadian job site is displayed properly
  
 Scenario 2: check whether job filter (city) is working properly      
 1.      Visit https://jobs.lever.co/traderev
-2.      Filter the Search results by City ìToronto, Ontario, Canadaî
-3.      All the job results displayed should belong to ìToronto, Ontario, Canadaî validate this.
+2.      Filter the Search results by City ‚ÄúToronto, Ontario, Canada‚Äù
+3.      All the job results displayed should belong to ‚ÄúToronto, Ontario, Canada‚Äù validate this.
  
 Scenario 3: check whether job filter (city) and (team) is working properly   
 1.      Visit https://jobs.lever.co/traderev
-2.      Filter the Search results by City ìToronto, Ontario, Canadaî and Team ìEngineeringî
-3.      All the job results displayed should belong to region ìToronto, Ontario, Canadaî and ìEngineeringî team, prove this.
+2.      Filter the Search results by City ‚ÄúToronto, Ontario, Canada‚Äù and Team ‚ÄúEngineering‚Äù
+3.      All the job results displayed should belong to region ‚ÄúToronto, Ontario, Canada‚Äù and ‚ÄúEngineering‚Äù team, prove this.
 4.     Finally log the total available positions listed. */ 
 
 public class TradeRevTest {
-	private WebDriver driver;
-	private String parentWindow;
-	private Set<String> allwindows;
+    private WebDriver driver;
+    private String parentWindow;
+    private Set<String> allwindows;
 
-	private void SwitchToNewTab() {
-		 parentWindow = driver.getWindowHandle();
-		 allwindows = driver.getWindowHandles();
-	   	 for (String childWindow : allwindows) {
-			    if(!childWindow.equals(parentWindow))
-				      {
-				        driver.switchTo().window(childWindow);
-		 		     }
-	 		    }
+    private void SwitchToNewTab() {
+	parentWindow = driver.getWindowHandle();
+	allwindows = driver.getWindowHandles();
+	for (String childWindow : allwindows) {
+	    if(!childWindow.equals(parentWindow)) {
+	        driver.switchTo().window(childWindow);
+	    }
 	}
+    }
 	
-	private void SwitchToParentTab() {
-		driver.close();    
+    private void SwitchToParentTab() {
+	driver.close();    
     	driver.switchTo().window(parentWindow);
-	}
+    }
 	
-	@BeforeClass
+    @BeforeClass
     public void setupWebDriver() {
-		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-		parentWindow = driver.getWindowHandle();
-		allwindows= driver.getWindowHandles();
-	}
+	System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
+	driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	parentWindow = driver.getWindowHandle();
+	allwindows= driver.getWindowHandles();
+    }
 	
 	
     @Test (priority=1)
@@ -83,7 +82,7 @@ public class TradeRevTest {
     	driver.findElement(By.xpath("//a[text()='Toronto, Ontario, Canada']")).click();
     	List<WebElement> locationlabels  = driver.findElements(By.className("sort-by-location"));
     	for (WebElement label: locationlabels) {
-        	Assert.assertEquals(label.getText(),"TORONTO, ONTARIO, CANADA");
+            Assert.assertEquals(label.getText(),"TORONTO, ONTARIO, CANADA");
     	}
     }
 
@@ -97,10 +96,10 @@ public class TradeRevTest {
     	List<WebElement> locationlabels  = driver.findElements(By.className("sort-by-location"));
     	List<WebElement> teamlabels  = driver.findElements(By.className("sort-by-team"));
     	for (WebElement label: locationlabels) {
-        	Assert.assertEquals(label.getText(),"TORONTO, ONTARIO, CANADA");
+            Assert.assertEquals(label.getText(),"TORONTO, ONTARIO, CANADA");
     	}
     	for (WebElement label: teamlabels) {
-        	Assert.assertEquals(label.getText().substring(0, 8),"ENGINEER");
+            Assert.assertEquals(label.getText().substring(0, 8),"ENGINEER");
     	}
     	
     	//log the total available positions listed
